@@ -1,13 +1,18 @@
 import React from 'react';
+import PropTypes from 'react';
 
-const Cat = () => {
+const Cat = ({ name, chipNum }) => {
   return (
     <li>
-      <h3>A soon to be Named Cat</h3>
-      <span>Chip #: </span>
+      <h3>{name}</h3>
+      <span>Chip #: {chipNum}</span>
       <button>add chip</button>
     </li>
   );
 };
 
+Cat.propTypes = {
+  name: PropTypes.string.isRequired,
+  chipNum: PropTypes.string.isRequired,
+};
 export default Cat;
