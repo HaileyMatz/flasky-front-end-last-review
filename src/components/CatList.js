@@ -1,13 +1,13 @@
 import React from 'react';
 import Cat from './Cat';
 
-const CatList = () => {
+const CatList = (props) => {
   return (
     <ul>
       <h2>Cat Count: 3</h2>
-      <Cat></Cat>
-      <Cat></Cat>
-      <Cat></Cat>
+      {props.cats.map((cat) => {
+        return <Cat name={cat.name} chipNum={cat.chipNumber} />;
+      })}
     </ul>
   );
 };
